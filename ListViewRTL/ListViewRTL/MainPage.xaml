@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewRTL.MainPage">
+
+    <Grid ColumnDefinitions="*,300" FlowDirection="LeftToRight">
+        <VerticalStackLayout Spacing="10" BackgroundColor="Transparent" FlowDirection="RightToLeft">
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="40">
+                                <Label  Text="{Binding}" Padding="10,0,0,0" FontSize="16" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Column="1" Padding="5" Spacing="10" BackgroundColor="White"  FlowDirection="RightToLeft">
+            <Grid ColumnDefinitions="*,*">
+                <Label Text="Drawerwidth"  VerticalTextAlignment="Center"/>
+                <Button Grid.Column="1" Text="Drawerwidth"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,*">
+                <Label Text="Drawerheight" VerticalTextAlignment="Center"/>
+                <Button Text="Drawerheight" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,*">
+                <Label Text="DrawerheaderHeight" VerticalTextAlignment="Center"/>
+                <Button Text="DrawerheaderHeight" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,*">
+                <Label Text="DrawerfooterHeight" WidthRequest="250" VerticalTextAlignment="Center"/>
+                <Button Text="DrawerfooterHeight" Grid.Column="1"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
